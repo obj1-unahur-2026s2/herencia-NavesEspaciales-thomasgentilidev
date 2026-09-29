@@ -23,7 +23,7 @@ Deben entender el mensaje `cambiarColorDeBaliza(colorNuevo)`.
 Llevan una cantidad de pasajeros que se indica para cada nave. Hay que registrar cuántas raciones de comida, y cuántas de bebida, se cargan en la nave. Para eso agregar métodos que permitan cargar y descargar una cantidad de raciones de comida, y lo mismo de bebida. 
 1. **Naves de combate**  
 Entienden estos mensajes:
-	- `ponerseVisible()`, `ponerseInvisible()`, `estaInvisible()`: puede estar visiblo o invisible.
+	- `ponerseVisible()`,[text](navesEspaciales.wlk) `ponerseInvisible()`, `estaInvisible()`: puede estar visiblo o invisible.
 	- `desplegarMisiles()`, `replegarMisiles()`, `misilesDesplegados()`: los misiles pueden, o no, estar desplegados.
 	- `emitirMensaje(mensaje)`, `mensajesEmitidos()`, `primerMensajeEmitido()`, `ultimoMensajeEmitido()`, `esEscueta()`, `emitioMensaje(mensaje)`.  
 	 Las naves de combate tienen la capacidad de emitir mensajes, cada mensaje se representa como un String, p.ej. "Llegando a Saturno". Una nave de combate es _escueta_ si no emitió ningún mensaje de más de 30 caracteres.
@@ -34,7 +34,11 @@ Todas las naves tienen que ser capaces de entender el mensaje `prepararViaje()`.
 - las _naves de combate_ se ponen visibles, repliegan sus misiles, aceleran 15000 kms/seg, y emiten el mensaje "Saliendo en misión".
 
 
-## Combustible
+## Combustibler al mensaje `recibirAmenaza()`.  
+_Cualquier_ nave, al recibir una amenaza, debe hacer dos cosas: primero _escapar_, y después _avisar_. 
+Por otro lado, lo que hace cada nave para escapar y para avisar, depende del tipo de nave según lo que se indica a continuación.
+- **Naves-baliza**  
+_Escapar_ es ir hacia el Sol, _avisar_ es cambiar 
 Agregar al modelo el _combustible_ de cada nave, medido en litros. Se tiene que poder cargar y descargar combustible.  
 Para **todas** las naves, agregar como acción adicional en la preparación de un viaje, cargar 30000 litros, y acelerar 5000 kms/seg (para las naves de combate, se acelera 5000 y luego otros 15000, total 20000).
 
